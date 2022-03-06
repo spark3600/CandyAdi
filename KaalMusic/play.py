@@ -107,9 +107,9 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/d6f92c979ad96b2031cba.png",
+                    photo="",
                     caption=f"""
-**#⃣ Songs In Queue Ke {pos}
+**#⃣ Songs In Queue {pos}
 🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
 🎧 On Request: {m.from_user.mention}**
@@ -127,9 +127,10 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
+                    photo="",
                     caption=f"""
-**▶ Ye wala gana baja rha hu sab aajao vc..😎😎
+**Ye wala gana baja rha hu sab aajao vc..😎😎
+
 🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
 🎧 Requested By: {m.from_user.mention}**
@@ -138,14 +139,14 @@ async def play(client, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply("Reply to Audio Files or provide something for Searches")
+            await m.reply("Reply to an audio file or provide some keyword to search on web.")
         else:
             await m.delete()
-            huehue = await m.reply("🔎 Searching")
+            huehue = await m.reply("Aajao saath me sunte hain..🤗🤗")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("`Kuch nahi mila.. firse song name btao..😪`")
+                await huehue.edit("Kuch nahi mila.. firse song name btao..😪")
             else:
                 songname = search[0]
                 url = search[1]
@@ -162,11 +163,12 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**#⃣ Kuch der me ye wala gana bjaunga.. jisko sunna hai aajao vc..😎  {pos}
+**#⃣ Kuch der me ye wala gana bjaunga.. jisko sunna hai aajao vc..😎  {pos}**
+
 🏷️ Titel: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
-🎧 On request: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}
 """,
                         )
                     else:
@@ -184,11 +186,12 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**▶ Ye wala gana baja rha hu sab aajao vc..😎😎
+**Ye wala gana baja rha hu sab aajao vc..😎😎**
+
 🏷️ Title: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
-🎧 On request: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}
 """,
                             )
                         except Exception as ep:
@@ -207,13 +210,13 @@ async def vplay(client, m: Message):
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
-                Q = 720
+                Q = 360
             else:
                 pq = m.text.split(None, 1)[1]
                 if pq == "720" or "480" or "360":
                     Q = int(pq)
                 else:
-                    Q = 720
+                    Q = 360
                     await huehue.edit(
                         "Only 720, 480, 360 ` Allowed \n`Now Stream in 720p`"
                     )
@@ -228,7 +231,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
+                    photo="",
                     caption=f"""
 **#⃣ Videos In Queue Ke {pos}
 🏷️ Title: {songname}
@@ -252,23 +255,23 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
+                    photo="",
                     caption=f"""
-**▶ Hmm.. ye video play kar rha hu me.. jisko dekhna hai vc join kro..🤩🤩
+**Hmm.. ye video play kar rha hu me.. jisko dekhna hai vc join kro..🤩🤩**
 🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
-🎧 On request: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}
 """,
                 )
 
     else:
         if len(m.command) < 2:
             await m.reply(
-                "**Reply to an Audio File or provide something for Search**"
+                "**Reply to an audio file or provide some keyword to search on web.**"
             )
         else:
             await m.delete()
-            huehue = await m.reply("**🔎 Searching **")
+            huehue = await m.reply("**Aajao saath me sunte hain..🤗🤗**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -293,11 +296,11 @@ async def vplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**#⃣ Videos In Queue Ke {pos}
+**#⃣ Videos In Queue {pos}**
 🏷️ Title: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
-🎧 On request: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}
 """,
                         )
                     else:
@@ -313,11 +316,11 @@ async def vplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**▶ Lo dekho vdo vc par..
+**▶ Lo dekho vdo vc par..**
 🏷️ Title: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
-🎧 On request: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}
 """,
                             )
                         except Exception as ep:
@@ -361,12 +364,12 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
+                        photo="",
                         caption=f"""
-**▶ Start Playing Songs From {chat}
+**▶ Starting Playing Songs From {chat}**
 🏷️ Title: [{songname}]({link})
 💬 Chat ID: {chat_id}
-🎧 On request: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}
 """,
                     )
             await hmm.delete()
@@ -385,11 +388,11 @@ async def playlist(client, m: Message):
         if len(chat_queue) == 1:
             await m.delete()
             await m.reply(
-                f"**🎧 NOW PLAYING:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
+                f"**Ye gane abhi baj rahe hain..:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
                 disable_web_page_preview=True,
             )
         else:
-            QUE = f"**🎧 NOW PLAYING:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**⏯ NEXT IN QUEUE:**"
+            QUE = f"**Ye gane abhi baj rahe hain..:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**⏯ NEXT IN QUEUE:**"
             l = len(chat_queue)
             for x in range(1, l):
                 hmm = chat_queue[x][0]
@@ -398,4 +401,4 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**Adi OP! 😎**")
+        await m.reply("**Kuch nahi hai yaha.. bhag jao**")
