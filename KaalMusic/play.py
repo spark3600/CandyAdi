@@ -1,4 +1,4 @@
-# FILES BELONGS TO @SANKIOWNER || @SANKIBRAND
+# FILES BELONGS TO @ADI_XD || @ADI_XD
 
 import asyncio
 
@@ -92,7 +92,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**🔄 Searching**")
+            huehue = await replied.reply("**Aajao saath me sunte hain..🤗🤗**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -109,8 +109,8 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/d6f92c979ad96b2031cba.png",
                     caption=f"""
-**#⃣ Song In Queue Ke {pos}
-🏷️ Title: [{songname}]({link})
+**#⃣ Songs In Queue Ke {pos}
+🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
 🎧 On Request: {m.from_user.mention}**
 """,
@@ -127,10 +127,10 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/6213d2673486beca02967.png",
+                    photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
                     caption=f"""
-**▶ Start Playing Song
-🏷️ Title: [{songname}]({link})
+**▶ Ye wala gana baja rha hu sab aajao vc..😎😎
+🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
 🎧 Requested By: {m.from_user.mention}**
 """,
@@ -145,7 +145,7 @@ async def play(client, m: Message):
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("`Found Nothing for Given Query`")
+                await huehue.edit("`Kuch nahi mila.. firse song name btao..😪`")
             else:
                 songname = search[0]
                 url = search[1]
@@ -162,8 +162,8 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**#⃣ Song In Queue  {pos}
-🏷️ Titel: [{songname}]({url})
+**#⃣ Kuch der me ye wala gana bjaunga.. jisko sunna hai aajao vc..😎  {pos}
+🏷️ Titel: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
 🎧 On request: {m.from_user.mention}**
@@ -184,8 +184,8 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**▶ Start Playing Song
-🏷️ Title: [{songname}]({url})
+**▶ Ye wala gana baja rha hu sab aajao vc..😎😎
+🏷️ Title: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
 🎧 On request: {m.from_user.mention}**
@@ -203,7 +203,7 @@ async def vplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**🔄 Processing**")
+            huehue = await replied.reply("**Acha.. ruko**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -228,10 +228,10 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/d6f92c979ad96b2031cba.png",
+                    photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
                     caption=f"""
 **#⃣ Videos In Queue Ke {pos}
-🏷️ Title: [{songname}]({link})
+🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
 🎧 On request: {m.from_user.mention}**
 """,
@@ -252,10 +252,10 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/6213d2673486beca02967.png",
+                    photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
                     caption=f"""
-**▶ Start Playing Video
-🏷️ Title: [{songname}]({link})
+**▶ Hmm.. ye video play kar rha hu me.. jisko dekhna hai vc join kro..🤩🤩
+🏷️ Title: {songname}
 💬 Chat ID: {chat_id}
 🎧 On request: {m.from_user.mention}**
 """,
@@ -275,7 +275,7 @@ async def vplay(client, m: Message):
             hmmm = HighQualityVideo()
             if search == 0:
                 await huehue.edit(
-                    "**Found Nothing for Given Query**"
+                    "**Kuch nahi mila..**"
                 )
             else:
                 songname = search[0]
@@ -294,7 +294,7 @@ async def vplay(client, m: Message):
                             photo=f"{thumbnail}",
                             caption=f"""
 **#⃣ Videos In Queue Ke {pos}
-🏷️ Title: [{songname}]({url})
+🏷️ Title: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
 🎧 On request: {m.from_user.mention}**
@@ -313,8 +313,8 @@ async def vplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**▶ Start Playing Video
-🏷️ Title: [{songname}]({url})
+**▶ Lo dekho vdo vc par..
+🏷️ Title: {songname}
 ⏱️ Duration: {duration}
 💬 Chat ID: {chat_id}
 🎧 On request: {m.from_user.mention}**
@@ -361,7 +361,7 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/6213d2673486beca02967.png",
+                        photo="https://te.legra.ph/file/69629da8d22ff237c2579.jpg",
                         caption=f"""
 **▶ Start Playing Songs From {chat}
 🏷️ Title: [{songname}]({link})
@@ -398,4 +398,4 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**❌ Doesn't play anything**")
+        await m.reply("**Adi OP! 😎**")
